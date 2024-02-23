@@ -1,0 +1,152 @@
+﻿<Window x:Class="Entity.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Entity"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="700" Width="800">
+    <Window.Background>
+        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+            <GradientStop Color="Black"/>
+            <GradientStop Color="#FFBFD2FA" Offset="1"/>
+        </LinearGradientBrush>
+    </Window.Background>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition Height="5*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Border Grid.Row="9" Grid.ColumnSpan="2" Margin="20 5 20 5" Padding="5" BorderThickness="2" BorderBrush="White" CornerRadius="5">
+            <DataGrid x:Name="grid_view" BorderThickness="0" Background="#FFAFCEEB"/>
+        </Border>
+        
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Border CornerRadius="10" Background="#FFAFCEEB"  Margin="20 5 20 5" Padding="5">
+                <Button x:Name="all_customers_button" BorderThickness="0" Content="All Customres" Width="150" HorizontalContentAlignment="Center" FontSize="16" Background="Transparent" Click="customers_ev"/>
+            </Border>
+            <Border Grid.Column="1" CornerRadius="10" Background="#FFAFCEEB" Margin="20 5 20 5" Padding="5">
+                <Button x:Name="all_emails_button" BorderThickness="0" Content="All Emails" Width="150" HorizontalContentAlignment="Center" FontSize="16" Background="Transparent" Click="emails_ev"/>
+            </Border>
+        </Grid>
+
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Border  CornerRadius="10" Background="#FFAFCEEB"  Margin="20 5 20 5" Padding="5">
+                <Button x:Name="all_sections_button" BorderThickness="0" Content="All Sections" Width="150" HorizontalContentAlignment="Center" FontSize="16" Background="Transparent" Click="sections_ev"/>
+            </Border>
+            <Border Grid.Column="1" Grid.Row="1" CornerRadius="10" Background="#FFAFCEEB" Margin="20 5 20 5" Padding="5">
+                <Button x:Name="prom_items_button" BorderThickness="0" Content="Prom items" Width="150" HorizontalContentAlignment="Center" FontSize="16" Background="Transparent" Click="promotional_ev"/>
+            </Border>
+        </Grid>
+
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Border Grid.Row="2" CornerRadius="10" Background="#FFAFCEEB" Margin="20 5 20 5" Padding="5">
+                <Button x:Name="customer_towns_button" BorderThickness="0" Content="Customer Towns" Width="150" HorizontalContentAlignment="Center" FontSize="16" Background="Transparent" Click="towns_ev"/>
+            </Border>
+            <Border Grid.Column="1" Grid.Row="2" CornerRadius="10" Background="#FFAFCEEB" Margin="20 5 20 5" Padding="5">
+                <Button x:Name="customer_countries_button" BorderThickness="0" Content="Customer Cntrs" Width="150" HorizontalContentAlignment="Center" FontSize="16" Background="Transparent" Click="countries_ev"/>
+            </Border>
+        </Grid>
+
+        <Grid Grid.Row="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Border Grid.Row="3" CornerRadius="10" Background="#FFAFCEEB" HorizontalAlignment="Left" Margin="20 5 20 5" Padding="5">
+                <Button x:Name="customer_sides_button" BorderThickness="0" Content="Customer Sides" Width="150" HorizontalContentAlignment="Center" FontSize="16" Background="Transparent" Click="sides_ev"/>
+            </Border>
+        </Grid>
+
+        <Grid Grid.Row="4">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Border  CornerRadius="10" Background="#FF88F0AB" HorizontalAlignment="Left" Margin="20 5 20 5" Padding="5">
+                <Button x:Name="create_customer_button" BorderThickness="0" Content="Customers List" Width="150" HorizontalContentAlignment="Center" FontSize="16" Background="Transparent" Click="customer_create_ev"/>
+            </Border>
+
+            <Border Grid.Column="1"  CornerRadius="10" Background="#FF88F0AB" HorizontalAlignment="Left" Margin="20 5 20 5" Padding="5">
+                <Button x:Name="add_customer_button" IsEnabled="False" BorderThickness="0" Content="Add Customer" Width="150" HorizontalContentAlignment="Center" FontSize="16" Background="Transparent" Click="customer_add_ev"/>
+            </Border>
+        </Grid>
+
+        <Grid Grid.Row="4" Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Border   CornerRadius="10" Background="#FF88F0AB" HorizontalAlignment="Left" Margin="20 5 20 5" Padding="5">
+                <Button x:Name="edit_customer_button" IsEnabled="False" BorderThickness="0" Content="Edit Customer" Width="150" HorizontalContentAlignment="Center" FontSize="16" Background="Transparent" Click="customer_edit_ev"/>
+            </Border>
+            <Border Grid.Column="1"  CornerRadius="10" Background="#FF88F0AB" HorizontalAlignment="Left" Margin="20 5 20 5" Padding="5">
+                <Button x:Name="delete_customer_button" IsEnabled="False" BorderThickness="0" Content="Delete Customer" Width="150" HorizontalContentAlignment="Center" FontSize="16" Background="Transparent" Click="customer_del_ev"/>
+            </Border>
+        </Grid>
+
+        <Grid Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Border CornerRadius="10" Background="#FFAFCEEB"  Margin="20 5 20 5" Padding="5">
+                <Button x:Name="specific_city_button" BorderThickness="0" Content="Customer of City" Width="150" HorizontalContentAlignment="Center" FontSize="16" Background="Transparent" Click="spec_city_ev"/>
+            </Border>
+            <Border Grid.Column="1" CornerRadius="10" Background="#FFAFCEEB"  Margin="20 5 20 5" Padding="5">
+                <TextBox x:Name="spec_city_textbox"  Background="AliceBlue" BorderThickness="0" FontSize="16" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+            </Border>
+        </Grid>
+
+        <Grid Grid.Row="1" Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Border CornerRadius="10" Background="#FFAFCEEB"  Margin="20 5 20 5" Padding="5">
+                <Button x:Name="specific_country_button" BorderThickness="0" Content="Customer of Country" Width="150" HorizontalContentAlignment="Center" FontSize="15" Background="Transparent" Click="spec_country_ev"/>
+            </Border>
+            <Border Grid.Column="1" CornerRadius="10" Background="#FFAFCEEB"  Margin="20 5 20 5" Padding="5">
+                <TextBox x:Name="spec_country_textbox" Background="AliceBlue" BorderThickness="0" FontSize="16" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+            </Border>
+        </Grid>
+
+        <Grid Grid.Row="5" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Border  CornerRadius="10" Background="#FF88F0AB" HorizontalAlignment="Left" Margin="20 5 20 5" Padding="5">
+                <Button x:Name="create_country_button" BorderThickness="0" Content="Countries List" Width="150" HorizontalContentAlignment="Center" FontSize="16" Background="Transparent" Click="countries_list__ev"/>
+            </Border>
+            <Border Grid.Column="1" CornerRadius="10" Background="#FF88F0AB" HorizontalAlignment="Left" Margin="20 5 20 5" Padding="5">
+                <Button x:Name="add_country_button" BorderThickness="0" Content="Add Country" Width="150" HorizontalContentAlignment="Center" FontSize="16" Background="Transparent" Click="countries_list__ev"/>
+            </Border>
+        </Grid>
+
+    </Grid>
+</Window>
