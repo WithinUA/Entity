@@ -144,7 +144,20 @@
                 <Button x:Name="create_country_button" BorderThickness="0" Content="Countries List" Width="150" HorizontalContentAlignment="Center" FontSize="16" Background="Transparent" Click="countries_list__ev"/>
             </Border>
             <Border Grid.Column="1" CornerRadius="10" Background="#FF88F0AB" HorizontalAlignment="Left" Margin="20 5 20 5" Padding="5">
-                <Button x:Name="add_country_button" BorderThickness="0" Content="Add Country" Width="150" HorizontalContentAlignment="Center" FontSize="16" Background="Transparent" Click="countries_list__ev"/>
+                <Button x:Name="add_country_button" IsEnabled="False" BorderThickness="0" Content="Add Country" Width="150" HorizontalContentAlignment="Center" FontSize="16" Background="Transparent" Click="add_country_ev"/>
+            </Border>
+        </Grid>
+
+        <Grid Grid.Row="5" Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Border  CornerRadius="10" Background="#FF88F0AB" HorizontalAlignment="Left" Margin="20 5 20 5" Padding="5">
+                <Button x:Name="edit_country_button" IsEnabled="False" BorderThickness="0" Content="Edit Country" Width="150" HorizontalContentAlignment="Center" FontSize="16" Background="Transparent" Click="add_country_ev"/>
+            </Border>
+            <Border Grid.Column="1" CornerRadius="10" Background="#FF88F0AB" HorizontalAlignment="Left" Margin="20 5 20 5" Padding="5">
+                <Button x:Name="del_country_button" IsEnabled="False" BorderThickness="0" Content="Delete Country" Width="150" HorizontalContentAlignment="Center" FontSize="16" Background="Transparent" Click="add_country_ev"/>
             </Border>
         </Grid>
 

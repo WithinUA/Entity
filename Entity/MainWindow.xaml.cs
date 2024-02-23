@@ -201,6 +201,10 @@ namespace Entity
             add_customer_button.IsEnabled = true;
             edit_customer_button.IsEnabled = true;
             delete_customer_button.IsEnabled = true;
+
+            add_country_button.IsEnabled = false;
+            edit_country_button.IsEnabled = false;
+            del_country_button.IsEnabled = false;
         }
 
         private void customer_add_ev(object sender, RoutedEventArgs e)
@@ -265,7 +269,37 @@ namespace Entity
 
         private void countries_list__ev(object sender, RoutedEventArgs e)
         {
+            try
+            {
+                grid_view.DataContext = null;
+                grid_view.ItemsSource = db.Countries.ToList();
+                add_country_button.IsEnabled = true;
+                edit_country_button.IsEnabled = true;
+                del_country_button.IsEnabled = true;
 
+                add_customer_button.IsEnabled = false;
+                edit_customer_button.IsEnabled = false;
+                delete_customer_button.IsEnabled = false;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void add_country_ev(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                NewCountry newcountry = new();
+                newcountry.ShowDialog();
+                grid_view.DataContext = null;
+                grid_view.ItemsSource = db.Countries.ToList();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }
